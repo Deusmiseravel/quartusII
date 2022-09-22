@@ -1,30 +1,25 @@
-# -------------------------------------------------------------------------- #
-#
-# Copyright (C) 1991-2013 Altera Corporation
-# Your use of Altera Corporation's design tools, logic functions 
-# and other software and tools, and its AMPP partner logic 
-# functions, and any output files from any of the foregoing 
-# (including device programming or simulation files), and any 
-# associated documentation or information are expressly subject 
-# to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
-# applicable agreement for further details.
-#
-# -------------------------------------------------------------------------- #
-#
-# Quartus II 64-Bit
-# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-# Date created = 14:39:27  September 22, 2022
-#
-# -------------------------------------------------------------------------- #
+--aula de 22/09/2022
+-- display de 7 segmentos com 4 entradas 
 
-QUARTUS_VERSION = "13.0"
-DATE = "14:39:27  September 22, 2022"
+entity aula1dia22092022 is
 
-# Revisions
+port(
+signal a, b, c, d : in bit;
+signal sa, sb, sc, sd, se, sf, sg : out bit 
 
-PROJECT_REVISION = "aula1dia22092022"
+); 
+end entity aula1dia22092022; 
+
+architecture arquivo_aula1dia22092022 of aula1dia22092022 is
+
+
+begin
+
+sa<= a or c or(b and d) or (not b and not d);
+sb<= not b or (not c and not d) or (c and d);
+sc<= b or not c or d;
+sd<= a or (not b and not d) or (not b and c) or (c and not d) or (b and not c and d);
+se<=(not b and not d) or (c and not d);
+sf<= a or (not c and not d) or (b and not c) or (b and not d);
+sg<= a or (b and not c) or (not b and c) or (c and not d);
+end architecture arquivo_aula1dia22092022;
